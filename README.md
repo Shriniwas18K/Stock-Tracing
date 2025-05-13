@@ -1,4 +1,4 @@
-# Real-Time Stock Data Streaming Application
+# Stock Tracing
 
 ## Project Overview
 A sophisticated Python-based real-time stock data streaming application that captures live market data using WebSocket technology.
