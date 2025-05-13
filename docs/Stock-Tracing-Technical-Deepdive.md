@@ -13,7 +13,8 @@ This project demonstrates a sophisticated real-time stock data streaming applica
 
 ### Key Technical Highlights
 
-![system_architecture](https://github.com/user-attachments/assets/6b77a0d0-6819-4ad1-886a-54cf491dcea7)
+<img width="424" alt="system_architecture" src="https://github.com/user-attachments/assets/57832674-ab4c-4aaa-88b6-ac5244ee7f04" />
+
 
 #### 1. Websocket Communication
 - **Technology**: Websocket-client library for real-time data streaming
