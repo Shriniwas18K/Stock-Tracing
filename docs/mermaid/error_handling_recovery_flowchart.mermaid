@@ -1,0 +1,54 @@
+flowchart TD
+    A[Stock Data Streaming System] --> B{Error Detection}
+    
+    subgraph "Error Classification"
+    EC1[Connection Errors]
+    EC2[Parsing Errors]
+    EC3[Processing Errors]
+    EC4[Resource Constraint Errors]
+    EC5[External API Errors]
+    end
+    
+    subgraph "Error Response Strategies"
+    RS1[Automatic Reconnection]
+    RS2[Message Retry Mechanism]
+    RS3[Fallback Data Processing]
+    RS4[Resource Reallocation]
+    RS5[Graceful Degradation]
+    end
+    
+    subgraph "Recovery Mechanisms"
+    RM1[Websocket Reconnection]
+    RM2[Thread Pool Reset]
+    RM3[Cache Recovery]
+    RM4[State Restoration]
+    RM5[Logging and Alerting]
+    end
+    
+    subgraph "Monitoring and Reporting"
+    MR1[Error Rate Tracking]
+    MR2[System Health Dashboard]
+    MR3[Performance Impact Analysis]
+    MR4[Root Cause Investigation]
+    MR5[Continuous Improvement Feedback]
+    end
+    
+    B --> EC1 & EC2 & EC3 & EC4 & EC5
+    
+    EC1 --> RS1
+    EC2 --> RS2
+    EC3 --> RS3
+    EC4 --> RS4
+    EC5 --> RS5
+    
+    RS1 --> RM1
+    RS2 --> RM2
+    RS3 --> RM3
+    RS4 --> RM4
+    RS5 --> RM5
+    
+    RM1 & RM2 & RM3 & RM4 & RM5 --> MR1 & MR2 & MR3 & MR4 & MR5
+    
+    classDef error fill:#FF6B6B,stroke:#333,stroke-width:2px;
+    classDef recovery fill:#4ECDC4,stroke:#333,stroke-width:2px;
+    classDef monitoring fill:#FFD93D,stroke:#333,stroke-width:2px;

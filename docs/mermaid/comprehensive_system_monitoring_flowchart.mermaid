@@ -1,0 +1,56 @@
+flowchart TD
+    A[Stock Data Streaming System] --> B{System Monitoring & Observability}
+    
+    subgraph "Performance Monitoring"
+    PM1[CPU Utilization Tracking]
+    PM2[Memory Consumption Analysis]
+    PM3[Network Throughput Metrics]
+    PM4[Thread Pool Performance]
+    PM5[Message Processing Latency]
+    end
+    
+    subgraph "System Health Checks"
+    HC1[WebSocket Connection Status]
+    HC2[Data Ingestion Rate]
+    HC3[Error Rate Detection]
+    HC4[Message Queue Management]
+    HC5[Ticker Processing Stability]
+    end
+    
+    subgraph "Advanced Observability"
+    OB1[Distributed Tracing]
+    OB2[Comprehensive Logging]
+    OB3[System State Snapshots]
+    OB4[Performance Profiling]
+    OB5[Anomaly Detection]
+    end
+    
+    subgraph "Error Management"
+    EM1[Automatic Error Logging]
+    EM2[Reconnection Strategies]
+    EM3[Graceful Degradation]
+    EM4[Error Classification]
+    EM5[Self-Healing Mechanisms]
+    end
+    
+    subgraph "Scalability Monitoring"
+    SM1[Dynamic Thread Scaling]
+    SM2[Resource Allocation Tracking]
+    SM3[Ticker Addition Capabilities]
+    SM4[Horizontal Scaling Potential]
+    end
+    
+    B --> PM1 & PM2 & PM3 & PM4 & PM5
+    B --> HC1 & HC2 & HC3 & HC4 & HC5
+    B --> OB1 & OB2 & OB3 & OB4 & OB5
+    B --> EM1 & EM2 & EM3 & EM4 & EM5
+    B --> SM1 & SM2 & SM3 & SM4
+    
+    OB2 --> LOG[Centralized Logging System]
+    OB1 --> TRACE[Distributed Tracing Dashboard]
+    EM1 --> ALERT[Alerting Mechanism]
+    
+    classDef monitoring fill:#4ECDC4,stroke:#333,stroke-width:2px;
+    classDef health fill:#FFD93D,stroke:#333,stroke-width:2px;
+    classDef error fill:#FF6B6B,stroke:#333,stroke-width:2px;
+    classDef scalability fill:#45B7D1,stroke:#333,stroke-width:2px;

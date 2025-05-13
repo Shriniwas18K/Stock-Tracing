@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant API as Finnhub WebSocket API
+    participant WS as WebSocket Client
+    participant MQ as Message Queue
+    participant TH as Ticker Threads
+    participant CSV as CSV Storage
+    participant LOG as Logging System
+    participant VIZ as React Visualization
+
+    API->>WS: Send Real-Time Stock Data
+    WS->>MQ: Queue Incoming Messages
+    loop Ticker Processing
+        MQ->>TH: Distribute Messages
+        TH->>TH: Parse Ticker Data
+        TH->>CSV: Write Stock Information
+        TH->>LOG: Log Processing Events
+    end
+    CSV->>VIZ: Read Latest Data
+    LOG->>LOG: Track Errors and Events

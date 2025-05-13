@@ -1,0 +1,25 @@
+flowchart TD
+    A[Finnhub WebSocket API] -->|Real-time Data| B{WebSocket Client}
+    
+    subgraph "Data Processing Pipeline"
+    B -->|Parse Messages| C[Message Queue]
+    C -->|Concurrent Processing| D[Thread 1: MSFT]
+    C -->|Concurrent Processing| E[Thread 2: AMZN]
+    
+    D -->|Extract Data| F{Data Transformer}
+    E -->|Extract Data| F
+    
+    F -->|Save| G[CSV File Storage]
+    F -->|Log| H[Logging System]
+    end
+    
+    G -->|Read| I[React Visualization]
+    H -->|Monitor| J[Error Tracking]
+    
+    classDef external fill:#f96,stroke:#333,stroke-width:4px;
+    classDef processing fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef storage fill:#bfb,stroke:#333,stroke-width:2px;
+    
+    class A external;
+    class B,C,D,E,F processing;
+    class G,I storage;
